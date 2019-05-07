@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+
+@mixin amte-parent-theme($theme) {
+  $primary: map-get($map: $theme, $key: primary);
+  $accent: map-get($map: $theme, $key: accent);
+  $warn: map-get($map: $theme, $key: warn);
+  $foreground: map-get($map: $theme, $key: foreground);
+  $background: map-get($map: $theme, $key: background);
+
+  amte-parent {
+    div {
+      background-color: mat-color($primary, darker);
+      h1 {
+        color: mat-color($accent, darker-contrast);
+      }
+    }
+  }
+}

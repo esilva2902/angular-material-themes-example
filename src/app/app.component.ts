@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'amte-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-material-themes-example';
+  theme: string = 'my-theme';
+
+  constructor(private overlayContainer: OverlayContainer) {
+    this.overlayContainer.getContainerElement().classList.add(this.theme);
+  }
+
+  onThemeChange() {
+    this.overlayContainer.getContainerElement().classList.add(this.theme);
+  }
+
 }
